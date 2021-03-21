@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+SHELL_FOLDER=$(cd "$(dirname "$0")";pwd)
+
+#RUN
+python3 $SHELL_FOLDER/struts2-032.py <url>:<port>
+python3 $SHELL_FOLDER/struts2-045.py <url>:<port>
+

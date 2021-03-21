@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+SHELL_FOLDER=$(cd "$(dirname "$0")";pwd)
+
+#RUN
+#python3 $SHELL_FOLDER/cve-2019-7238.py <url>:<port>
+
