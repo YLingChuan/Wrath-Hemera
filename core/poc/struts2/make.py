@@ -17,7 +17,6 @@ port = input("[+] Please input port:")
 print("[+] Port:",port)
 
 
-
 os.system("sed -i 's/<url>/%s/g' %s/final_execute"%(target,struts2))
 os.system("sed -i 's/<port>/%s/g' %s/final_execute"%(port,struts2))
 

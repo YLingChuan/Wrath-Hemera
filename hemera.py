@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-import os 
+import os
 import sys
 import time
 import requests
@@ -11,7 +11,7 @@ from lib.utils import check
 #path
 path = os.getcwd()
 cache = (path+'/cache')
-#debug 
+#debug
 #print(cache)
 
 #Vul path
@@ -20,6 +20,7 @@ struts2 = (path+"/core/poc/struts2")
 drupal = (path+"/core/poc/drupal")
 jboss = (path+"/core/poc/jboss")
 nexus = (path+"/core/poc/nexus")
+ofbiz = (path+"/core/poc/ofbiz")
 #print(solr)
 
 
@@ -32,7 +33,7 @@ print(ascii_banner)
 #Num
 ##solr
 files = os.listdir(solr)
-num_tmp_solr = len(files) 
+num_tmp_solr = len(files)
 solrnum = (num_tmp_solr - 2)
 ##struts2
 files = os.listdir(struts2)
@@ -40,20 +41,24 @@ num_tmp_struts2 = len(struts2)
 struts2num = (num_tmp_struts2 - 44)
 ##drupal
 files = os.listdir(drupal)
-num_tmp_drupal = len(files) 
+num_tmp_drupal = len(files)
 drupalnum = (num_tmp_drupal - 2)
 ##Jboss
 files = os.listdir(jboss)
-num_tmp_jboss = len(files) 
+num_tmp_jboss = len(files)
 jbossnum = (num_tmp_jboss - 2)
 ##Jboss
 files = os.listdir(nexus)
-num_tmp_nexus = len(files) 
+num_tmp_nexus = len(files)
 nexusnum = (num_tmp_nexus - 2)
+##OFbiz
+files = os.listdir(ofbiz)
+num_tmp_ofbiz = len(files)
+ofbiznum = (num_tmp_ofbiz - 2)
 '''
 UPDATE POC NUMBER
 '''
-allpocnum = solrnum + struts2num + drupalnum + jbossnum +nexusnum
+allpocnum = solrnum + struts2num + drupalnum + jbossnum + nexusnum + ofbiznum
 print("\033[1;33m[+] Wrath Hemera has a total of %d vulnerabilities\033[0m"%(allpocnum))
 
 '''
@@ -112,7 +117,7 @@ for opt_name,opt_value in opts:
        print( '[+] The module you choose is:',module)
        if module == "solr":
           os.system("python3 %s/make.py" %(solr))
-           
+
        elif module == "struts2":
            os.system("python3 %s/make.py" %(struts2))
        elif module == "drupal":
@@ -121,6 +126,8 @@ for opt_name,opt_value in opts:
            os.system("python3 %s/make.py" %(jboss))
        elif module == "nexus":
            os.system("python3 %s/make.py" %(nexus))
+       elif module == "ofbiz":
+           os.system("python3 %s/make.py" %(ofbiz))
        else:
 
            print("[!] Unsupported module.")
@@ -219,14 +226,8 @@ for opt_name,opt_value in opts:
 
     print(table)
 
-       
+
 
 
 
 #from lib.utils import autoscan
-
-
-
-
-
-
